@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 25px;
+    margin: 25px;
+}
+
+h3 {
+    display: inline-block;
+}
+
+.goldbox{
+    display: inline-block;
+    border: 1px solid black;
+    margin-bottom: 25px;
+    width: 100px;
+    padding: 5px;
+}
+
+.container{
+    width: 900px;
+}
+
+.building{
+    display: inline-block;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    margin-right: 27px;
+    width: 150px;
+    height: 130px;
+    vertical-align: top;
+}
+
+.activities{
+    margin-top: 20px;
+    border: 2px solid black;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
