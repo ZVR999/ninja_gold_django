@@ -24,6 +24,7 @@ def process_money(request,number):
     neg_end = 'gold...ouch..'
     where = 'gold from the'
     time = '! ('+now+')</div>'
+    # Create an array to hold the divs from request.session['activity'] to then display in the in the activities section
     if not 'history' in request.session:
         request.session['history'] = []
     # Farm
@@ -62,18 +63,20 @@ def process_money(request,number):
     activity = request.session['activity']
     history.append(activity)
     
-    if len(history)>1:    
-        for x in range(len(history)/2):
-            temp = history[x]
-            history[-1-x] = history[x]
-            history[-1-x] = temp
+    # Make sure the last entry stay in the top part of the activities section
+    if len(history) > 1:
+        def revese(arr):
+            for x in range(0,1):
+                arr.insert(0,arr[-1])
+                arr.pop()
+            return arr            
 
-            
-        
-    
+        revese(history)
+
 
     return redirect('/')
 
+# Reset game
 def reset(request):
     request.session['activity'] = ''
     request.session['history'] = []
